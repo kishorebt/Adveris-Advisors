@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directoryPath = 'c:\\Users\\HP\\Documents\\Adveris - google';
+const directoryPath = __dirname;
 const headInsertion = '  <link rel="stylesheet" href="css/consent.css"/>\n';
 const bodyInsertion = '  <script src="js/consent.js"></script>\n';
 

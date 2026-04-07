@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const dir = 'c:/Users/HP/Documents/Adveris - google';
+const dir = __dirname;
 const pages = ['index.html','about.html','team.html','services.html','insights.html','careers.html','contact.html'];
 
 // Lenis CDN script — must go before main.js
