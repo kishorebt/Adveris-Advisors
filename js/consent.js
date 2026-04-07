@@ -49,19 +49,21 @@
       <div class="consent-card">
         <h2>Disclaimer &amp; Consent</h2>
         
-        <p>The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner.</p>
-        
-        <p>This website is meant solely for the purpose of providing general information and not for advertising or soliciting any work whether directly or indirectly. By accessing this website, www.adverisadvisors.in, you acknowledge and confirm that you are seeking information relating to Adveris Advisors LLP of your own accord. Further, any content provided in this website should not be construed as legal advice. We disclaim all liability for any consequences of any action taken by the user relying on content provided on the website.</p>
-        
-        <p>By clicking on the "I Accept" button, the user acknowledges that:</p>
-        
-        <ul>
-          <li>she/he wishes to gain more information about Adveris Advisors LLP;</li>
-          <li>there has been no invitation, inducement or advertisement of any sort whatsoever to solicit any work through this website; and</li>
-          <li>she/he is aware that our website uses cookies to improve functionality and performance by analysing traffic to the website and she/he agrees to our use of cookies.</li>
-        </ul>
-        
-        <p>To learn more about how we use cookies, please read our <a href="#" class="privacy-link">Privacy Policy</a>.</p>
+        <div class="consent-body">
+          <div class="consent-col">
+            <p>The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner.</p>
+            <p>This website is meant solely for the purpose of providing general information and not for advertising or soliciting any work whether directly or indirectly. By accessing this website, www.adverisadvisors.in, you acknowledge and confirm that you are seeking information relating to Adveris Advisors LLP of your own accord. Further, any content provided in this website should not be construed as legal advice. We disclaim all liability for any consequences of any action taken by the user relying on content provided on the website.</p>
+          </div>
+          <div class="consent-col">
+            <p>By clicking on the "I Accept" button, the user acknowledges that:</p>
+            <ul>
+              <li>she/he wishes to gain more information about Adveris Advisors LLP;</li>
+              <li>there has been no invitation, inducement or advertisement of any sort whatsoever to solicit any work through this website; and</li>
+              <li>she/he is aware that our website uses cookies to improve functionality and performance by analysing traffic to the website and she/he agrees to our use of cookies.</li>
+            </ul>
+            <p>To learn more about how we use cookies, please read our <a href="#" class="privacy-link">Privacy Policy</a>.</p>
+          </div>
+        </div>
         
         <div class="consent-actions">
           <button id="adverisConsentBtn" class="consent-btn">I Accept</button>
