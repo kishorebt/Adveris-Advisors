@@ -153,35 +153,35 @@
   
   .consent-card {
     height: 80vh; /* Request: use 80% on mobile */
-    padding: 32px 6vw; /* Switch to larger standard padding */
+    padding: 24px 5vw; /* Reduced to leave more vertical space */
     border-radius: 28px 28px 0 0;
   }
   .consent-card h2 {
-    font-size: 1.5rem; /* Readable on mobile */
-    margin-bottom: 20px;
-    padding-bottom: 12px;
+    font-size: 1.2rem; /* Shrunk for height conservation */
+    margin-bottom: 12px;
+    padding-bottom: 8px;
   }
   .consent-card p {
-    font-size: 0.95rem; /* High readability */
-    margin-bottom: 16px;
-    line-height: 1.5;
+    font-size: 0.85rem; /* Shrunk for height conservation */
+    margin-bottom: 8px;
+    line-height: 1.3;
   }
   .consent-card ul {
-    margin-bottom: 16px;
-    margin-left: 20px;
+    margin-bottom: 8px;
+    margin-left: 16px;
   }
   .consent-card li {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 8px;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 4px;
   }
   .consent-actions {
     margin-top: auto;
-    padding-top: 16px;
+    padding-top: 12px;
   }
   .consent-btn {
-    padding: 14px 40px;
-    font-size: 1rem;
+    padding: 12px 32px;
+    font-size: 0.9rem;
     width: 100%; /* Full width button on mobile */
     max-width: 300px;
   }
