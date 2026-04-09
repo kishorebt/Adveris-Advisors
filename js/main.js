@@ -29,20 +29,20 @@
     requestAnimationFrame(raf);
 
     // Stop/start scroll when menu opens/closes
-    window.__lenisStop  = () => lenis.stop();
+    window.__lenisStop = () => lenis.stop();
     window.__lenisStart = () => lenis.start();
   }
 
   /* ----------------------------------------------------------------
      1. DOM REFERENCES
   ---------------------------------------------------------------- */
-  const nav         = document.getElementById('mainNav');
-  const menuBtn     = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+  const menuBtn = document.getElementById('menuBtn');
   const menuOverlay = document.getElementById('menuOverlay');
-  const menuClose   = document.getElementById('menuClose');
-  const sideDots    = document.getElementById('sideDots');
-  const scrollProg  = document.getElementById('scrollProg');
-  const backToTop   = document.getElementById('backToTop');
+  const menuClose = document.getElementById('menuClose');
+  const sideDots = document.getElementById('sideDots');
+  const scrollProg = document.getElementById('scrollProg');
+  const backToTop = document.getElementById('backToTop');
 
   /* ----------------------------------------------------------------
      2. NAV — Scroll state
@@ -62,7 +62,7 @@
   function updateScrollProgress() {
     if (!scrollProg) return;
     const total = document.documentElement.scrollHeight - window.innerHeight;
-    const pct   = total > 0 ? (window.scrollY / total) * 100 : 0;
+    const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
     scrollProg.style.width = pct + '%';
   }
 
@@ -105,7 +105,7 @@
     menuBtn && menuBtn.classList.remove('menu-open-state');
   }
 
-  menuBtn   && menuBtn.addEventListener('click', () => { openMenu();  if (window.__lenisStop)  window.__lenisStop();  });
+  menuBtn && menuBtn.addEventListener('click', () => { openMenu(); if (window.__lenisStop) window.__lenisStop(); });
   menuClose && menuClose.addEventListener('click', () => { closeMenu(); if (window.__lenisStart) window.__lenisStart(); });
 
   // Close on ESC
@@ -128,7 +128,7 @@
   function initAccordion() {
     const cols = document.querySelectorAll('.menu-col');
     cols.forEach((col, idx) => {
-      const title   = col.querySelector('.menu-col-title');
+      const title = col.querySelector('.menu-col-title');
       const content = col.querySelector('.menu-col-content');
       if (!title || !content) return;
 
@@ -181,7 +181,7 @@
      6. SIDE DOTS — Adaptive color tracking (homepage only)
   ---------------------------------------------------------------- */
   const sections = document.querySelectorAll('[data-section]');
-  const dots     = document.querySelectorAll('.s-dot');
+  const dots = document.querySelectorAll('.s-dot');
 
   function updateDots() {
     if (!sections.length || !dots.length) return;
@@ -213,8 +213,10 @@
       const target = document.querySelector('[data-section="' + dot.getAttribute('data-target') + '"]');
       if (!target) return;
       if (lenis) {
-        lenis.scrollTo(target, { offset: -80, duration: 1.6,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        lenis.scrollTo(target, {
+          offset: -80, duration: 1.6,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
       } else {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -253,12 +255,12 @@
   function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-count'), 10);
     const suffix = el.getAttribute('data-suffix') || '';
-    const dur    = 1600;
-    const steps  = 60;
-    const inc    = target / steps;
-    let current  = 0;
-    let step     = 0;
-    const timer  = setInterval(() => {
+    const dur = 1600;
+    const steps = 60;
+    const inc = target / steps;
+    let current = 0;
+    let step = 0;
+    const timer = setInterval(() => {
       step++;
       current = Math.min(Math.round(inc * step), target);
       el.textContent = current + suffix;
@@ -295,7 +297,7 @@
   ---------------------------------------------------------------- */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
-  
+
   // PASTE YOUR GOOGLE SCRIPT URL HERE
   // PASTE YOUR GOOGLE SCRIPT URL HERE
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCOsWP4EPPjWTpzEH-z_X2_HIbdmOODNmDX1d3qZx5TKddzG9T1UrCzx_gvNCvqM1Uiw/exec";
@@ -313,7 +315,7 @@
       const btn = contactForm.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
-      const code  = contactForm.querySelector('#countryCode')?.value || '';
+      const code = contactForm.querySelector('#countryCode')?.value || '';
       const phone = contactForm.querySelector('#phone')?.value || '';
       const fullPhone = (code || phone) ? `${code}${phone}` : '';
 
@@ -342,7 +344,7 @@
             body: JSON.stringify(data),
           });
         }
-        
+
         if (formSuccess) formSuccess.classList.add('show');
         contactForm.reset();
       } catch (error) {
@@ -359,14 +361,14 @@
   ---------------------------------------------------------------- */
   const careerForm = document.getElementById('careerForm');
   const careerSuccess = document.getElementById('careerSuccess');
-  
+
   if (careerForm) {
     careerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = careerForm.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
 
-      const code  = careerForm.querySelector('#cCountryCode')?.value || '';
+      const code = careerForm.querySelector('#cCountryCode')?.value || '';
       const phone = careerForm.querySelector('#cphone')?.value || '';
       const fullPhone = (code || phone) ? `${code}${phone}` : '';
 
@@ -391,7 +393,7 @@
             body: JSON.stringify(data),
           });
         }
-        
+
         if (careerSuccess) careerSuccess.classList.add('show');
         careerForm.reset();
       } catch (error) {
