@@ -298,7 +298,7 @@
   
   // PASTE YOUR GOOGLE SCRIPT URL HERE
   // PASTE YOUR GOOGLE SCRIPT URL HERE
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqpj3Y6L9X1h6U0o6yA60yrwf4ZxFynMQ-KqEzhfMqh7t1JjnmIiC1d_AK_4YlLKbIew/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCOsWP4EPPjWTpzEH-z_X2_HIbdmOODNmDX1d3qZx5TKddzG9T1UrCzx_gvNCvqM1Uiw/exec";
 
   // Numeric-only validation helper
   document.querySelectorAll('.numeric-only').forEach(input => {
