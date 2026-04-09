@@ -1066,3 +1066,64 @@ select.form-control { appearance: none; cursor: pointer; }
   .menu-overlay__top { padding: 0 16px; }
   .menu-bottom { padding: 14px 16px; }
 }
+
+/* Custom List for Services */
+.custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: var(--text-grey);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.custom-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+}
+.custom-list li::before {
+  content: "•";
+  color: var(--saffron);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.svc-detail-card p {
+  display: none; /* Hide old paragraph styles if any remain */
+}
+
+/* Homepage Carousel */
+.services-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  padding: 10px 0 24px 0; /* extra padding to fit the scrollbar */
+  scroll-snap-type: x mandatory;
+}
+/* Elegant custom scroller */
+.services-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.services-carousel::-webkit-scrollbar-track {
+  background: var(--off-white);
+  border-radius: 4px;
+  margin: 0 5vw; /* give some edge spacing so it doesn't touch the screen bounds */
+}
+.services-carousel::-webkit-scrollbar-thumb {
+  background: var(--saffron);
+  border-radius: 4px;
+}
+.services-carousel::-webkit-scrollbar-thumb:hover {
+  background: #db8a10; /* slightly darker on hover */
+}
+.services-carousel .svc-card {
+  min-width: 300px;
+  max-width: 300px;
+  scroll-snap-align: start;
+}
+/* Adjust grid to block on mobile for carousel */
+@media (max-width: 768px) {
+  .services-carousel .svc-card {
+    min-width: 250px;
+  }
+}

@@ -34,14 +34,18 @@ const newOverlay = `  <!-- MENU OVERLAY — NKF-style grid / mobile accordion --
           <a href="services.html" class="menu-primary-link"><em>Services</em></a>
           <div class="menu-sub-group">
             <div class="menu-sub-label">What We Do</div>
-            <a href="services.html" class="menu-sub-link">Corporate Law</a>
-            <a href="services.html" class="menu-sub-link">Mergers &amp; Acquisitions</a>
-            <a href="services.html" class="menu-sub-link">Regulatory Compliance</a>
-            <a href="services.html" class="menu-sub-link">Company Secretary</a>
-            <a href="services.html" class="menu-sub-link">Contract Drafting</a>
-            <a href="services.html" class="menu-sub-link">Labour &amp; Employment</a>
-            <a href="services.html" class="menu-sub-link">GST &amp; Tax Compliance</a>
-            <a href="services.html" class="menu-sub-link">Startup Legal Advisory</a>
+            <a href="services.html#01" class="menu-sub-link">Corporate Advisory</a>
+            <a href="services.html#02" class="menu-sub-link">VC &amp; Private Equity</a>
+            <a href="services.html#03" class="menu-sub-link">Mergers &amp; Acquisitions</a>
+            <a href="services.html#04" class="menu-sub-link">Loans &amp; Debt Financing</a>
+            <a href="services.html#05" class="menu-sub-link">Commercial Contracts</a>
+            <a href="services.html#06" class="menu-sub-link">Employment Law</a>
+            <a href="services.html#07" class="menu-sub-link">Regulatory Compliance</a>
+            <a href="services.html#08" class="menu-sub-link">Due Diligence</a>
+            <a href="services.html#09" class="menu-sub-link">Dispute &amp; Pre-Litigation</a>
+            <a href="services.html#10" class="menu-sub-link">Business Valuation</a>
+            <a href="services.html#11" class="menu-sub-link">Authorities Representation</a>
+            <a href="services.html#12" class="menu-sub-link">Bankruptcy &amp; Insolvency</a>
           </div>
         </div>
       </div>
