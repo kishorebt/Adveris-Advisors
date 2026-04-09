@@ -327,6 +327,8 @@
         message: contactForm.querySelector('#message')?.value || ''
       };
 
+      console.log('Sending Contact Data:', data);
+
       try {
         // If no script URL is provided, stay in testing mode
         if (SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL_HERE") {
@@ -376,6 +378,8 @@
         role: careerForm.querySelector('#crole')?.value || 'N/A',
         message: careerForm.querySelector('#cmsg')?.value || 'No cover note provided.'
       };
+
+      console.log('Sending Career Data:', data);
 
       try {
         if (SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL_HERE") {

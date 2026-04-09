@@ -8,7 +8,7 @@ Follow these 3 simple steps to get your professional, silent background email sy
 3.  Delete any code in the editor and paste the code below:
 
 ```javascript
-/* ADVERIS ADVISORS — SMART FORM HANDLER V2 */
+/* ADVERIS ADVISORS — SMART FORM HANDLER V2.1 */
 
 function doPost(e) {
   try {
@@ -18,7 +18,13 @@ function doPost(e) {
     // 1. Details for the Primary Email (To: Ashik, CC: Kishore)
     var to = "csashikgswamy@gmail.com";
     var cc = "kishorebt11@gmail.com";
-    var subject = type + ": " + (data.name || "Unknown");
+    var subject = "";
+    
+    if (type.includes("Career")) {
+      subject = "New Candidate form submitted - " + (data.name || "Unknown");
+    } else {
+      subject = "New Contact Lead submitted - " + (data.name || "Unknown");
+    }
     
     // 2. Format a Beautified Email Body
     var body = "--------------------------------------------------\n" +
