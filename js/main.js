@@ -291,46 +291,89 @@
   });
 
   /* ----------------------------------------------------------------
-     11. CONTACT FORM — Mock submit (Phase 1 mailto / Phase 2: Supabase)
+     11. CONTACT FORM — Silent Background Submit (powered by Google Apps Script)
   ---------------------------------------------------------------- */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
+  
+  // PASTE YOUR GOOGLE SCRIPT URL HERE
+  const SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-      // Phase 1: open mailto
-      const name    = contactForm.querySelector('#name')?.value || '';
-      const email   = contactForm.querySelector('#email')?.value || '';
-      const service = contactForm.querySelector('#service')?.value || '';
-      const message = contactForm.querySelector('#message')?.value || '';
-      const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\n\n${message}`);
-      window.open(`mailto:csashikgswamy@gmail.com?cc=kishorebt11@gmail.com&subject=Enquiry from ${encodeURIComponent(name)}&body=${body}`);
-      if (formSuccess) formSuccess.classList.add('show');
-      contactForm.reset();
-      if (btn) { btn.disabled = false; btn.textContent = 'Send Enquiry'; }
+
+      const data = {
+        name: contactForm.querySelector('#name')?.value || '',
+        email: contactForm.querySelector('#email')?.value || '',
+        service: contactForm.querySelector('#service')?.value || '',
+        message: contactForm.querySelector('#message')?.value || ''
+      };
+
+      try {
+        // If no script URL is provided, stay in testing mode
+        if (SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL_HERE") {
+          console.warn("No Google Script URL provided. Still using mailto fallback.");
+          const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nService: ${data.service}\n\n${data.message}`);
+          window.open(`mailto:csashikgswamy@gmail.com?cc=kishorebt11@gmail.com&subject=Enquiry from ${encodeURIComponent(data.name)}&body=${body}`);
+        } else {
+          // Actual Silent API Call
+          await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify(data),
+          });
+        }
+        
+        if (formSuccess) formSuccess.classList.add('show');
+        contactForm.reset();
+      } catch (error) {
+        console.error("Submission error:", error);
+        alert("Sorry, there was an error sending your enquiry. Please try again or contact us via email.");
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = 'Send Enquiry'; }
+      }
     });
   }
 
   /* ----------------------------------------------------------------
-     12. CAREERS FORM — Mock submit
+     12. CAREERS FORM — Silent Background Submit
   ---------------------------------------------------------------- */
   const careerForm = document.getElementById('careerForm');
   const careerSuccess = document.getElementById('careerSuccess');
+  
   if (careerForm) {
-    careerForm.addEventListener('submit', (e) => {
+    careerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = careerForm.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
-      const name  = careerForm.querySelector('#cname')?.value || '';
-      const email = careerForm.querySelector('#cemail')?.value || '';
-      const role  = careerForm.querySelector('#crole')?.value || '';
-      const body  = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nApplying for: ${role}`);
-      window.open(`mailto:csashikgswamy@gmail.com?cc=kishorebt11@gmail.com&subject=Job Application - ${encodeURIComponent(role)}&body=${body}`);
-      if (careerSuccess) careerSuccess.classList.add('show');
-      careerForm.reset();
-      if (btn) { btn.disabled = false; btn.textContent = 'Submit Application'; }
+
+      const data = {
+        name: careerForm.querySelector('#cname')?.value || '',
+        email: careerForm.querySelector('#cemail')?.value || '',
+        role: careerForm.querySelector('#crole')?.value || '',
+        message: "Job Application Submission"
+      };
+
+      try {
+        if (SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL_HERE") {
+          const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nApplying for: ${data.role}`);
+          window.open(`mailto:csashikgswamy@gmail.com?cc=kishorebt11@gmail.com&subject=Job Application - ${encodeURIComponent(data.role)}&body=${body}`);
+        } else {
+          await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify(data),
+          });
+        }
+        
+        if (careerSuccess) careerSuccess.classList.add('show');
+        careerForm.reset();
+      } catch (error) {
+        console.error("Submission error:", error);
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = 'Submit Application'; }
+      }
     });
   }
 
